@@ -3,9 +3,11 @@ html {
   color: #19171c;
 }
 .description {
-  visibility: visible;
+  display: none;
 }
 
-.active {
-  visibility: hidden;
+/* Anropad to the javascript */
+/* [2 clases] + [1 class] */
+.title.active + .description {
+  display: block;
 }
