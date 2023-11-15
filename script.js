@@ -13,7 +13,7 @@ function renderData(data) {
     //creating section title
     const titleEl = document.createElement("div");
     titleEl.setAttribute("class", "section");
-    titleEl.innerHTML = "<p>Title</p>";
+    titleEl.innerHTML = `<p>${el.title}</p>`;
 
     //creating section description
     const bodyEl = document.createElement("div");
