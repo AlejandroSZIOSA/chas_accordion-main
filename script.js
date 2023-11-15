@@ -8,10 +8,22 @@ async function getData() {
 
 function renderData(data) {
   console.log(data);
-  const titleElements = document
-    .querySelector("h1")
-    .forEach((titles) => titles.addEventListener("click", toggle));
-  data.forEach((e) => {});
+  const header = document.querySelector("h1");
+  data.forEach((el) => {
+    //creating section title
+    const titleEl = document.createElement("div");
+    titleEl.setAttribute("class", "section");
+    titleEl.innerHTML = "<p>Title</p>";
+
+    //creating section description
+    const bodyEl = document.createElement("div");
+    bodyEl.setAttribute("class", "description");
+    bodyEl.innerHTML = "Description";
+
+    //Adding section title to the html :)
+    const mainSectionEl = document.querySelector(".accordion");
+    mainSectionEl.appendChild(titleEl);
+  });
 }
 
 function toggle(e) {
@@ -21,6 +33,7 @@ function toggle(e) {
   element.classList.toggle("active");
 }
 
+getData();
 /* const titleElements = document
   .querySelectorAll(".title")
   .forEach((titles) => titles.addEventListener("click", toggle)); */
