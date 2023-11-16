@@ -9,6 +9,14 @@ async function getData() {
 function renderData(data) {
   console.log(data);
   const header = document.querySelector("h1");
+
+  function toggle(e) {
+    const element = e.currentTarget; //Fix problem :)
+    /* Toggle will add one class, the class must be defined in the Css stylesheet 
+    ,If not will create an empty class  */
+    element.classList.toggle("active");
+    console.log(element);
+  }
   data.forEach((el) => {
     //creating section title
     const titleEl = document.createElement("div");
@@ -18,19 +26,15 @@ function renderData(data) {
     //creating section description
     const bodyEl = document.createElement("div");
     bodyEl.setAttribute("class", "description");
-    bodyEl.innerHTML = "Description";
+    bodyEl.innerHTML = "<p>Description</p>";
 
     //Adding section title to the html :)
     const mainSectionEl = document.querySelector(".accordion");
     mainSectionEl.appendChild(titleEl);
-  });
-}
+    mainSectionEl.appendChild(bodyEl);
 
-function toggle(e) {
-  const element = e.target;
-  /* Toggle will add one class, the class must be defined in the Css stylesheet 
-  ,If not will create an empty class  */
-  element.classList.toggle("active");
+    titleEl.addEventListener("click", toggle);
+  });
 }
 
 getData();

@@ -8,6 +8,6 @@ html {
 
 /* Anropad to the javascript */
 /* [2 clases] + [1 class] */
-.title.active + .description {
+.section.active + .description {
   display: block;
 }
